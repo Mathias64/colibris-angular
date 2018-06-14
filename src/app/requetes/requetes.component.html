@@ -1,0 +1,296 @@
+<div id="zoneSearchResult">
+    <article *ngFor="let s of listedemandes" class="panel-heading"><!-- Affichage principal de l'info -->
+            <!-- Affichage principal de l'info -->
+        <div class="ficheContain">
+            <div class="article-left">
+                <img [src]="s.cover" alt="couverture">
+                <div>
+                    <div class="titleArticle">
+                        <h2>{{s.title}}</h2>
+                        <h3>{{s.author}}</h3>
+                    </div>
+                    <div class="containMenu">
+                        <ul>
+                            <li>{{s.professeur}}</li>
+                            <li>Collège {{s.college}}</li>
+                            <li>{{s.classe}}</li>
+                        </ul>
+                        <ul>
+                            <li>Demandé le {{s.date_demande}}</li>
+                            <li>Du 00/00/2018</li>
+                            <li>au 00/00/2018</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-right">
+                <ul>
+                    <li>
+                        <i class="fas fa-plus" title="Ajouter"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-pencil-alt" title="Modifier"></i>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">
+                            <i class="fas fa-angle-down 1" title="Ouvrir"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="sliderDispo" class="ui1-rangeSlider">
+            <div class="ui1-rangeSlider-container">
+                <div class="ui1-rangeSlider-innerBar">
+                    <div class="ui1-ruler-scale">
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">sept.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1264%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">oct.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">nov.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">déc.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">janv.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 9.13416%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">févr.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 10.0992%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">mars</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">avr.</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">mai</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">juin</span>
+                            </div>
+                        </div>
+                        <div class="ui1-ruler-tick" style="display: inline-block; width: 1.15536%;">
+                            <div class="ui1-ruler-tick-inner">
+                                <span class="ui1-ruler-tick-label">juill.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui1-rangeSlider-bar" style="width: 10%; left: 63%;"></div>
+                <div class="ui1-rangeSlider-bar" style="width: 20%; left: 10%;"></div>
+            </div>
+        </div>
+
+        <div class="article-complement clear">
+            <!-- colleges -->
+            <div class="collegeContain">
+                <div class="college">
+                    <p>College Si min Palay - Lescar</p>
+                    <div style="display: flex; width: 50%; justify-content: space-between">
+                        <p>23 exemplaires</p>
+                        <ul class="classes" style="display: flex">
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">6ᵉ</li>
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">5ᵉ</li>
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">4ᵉ</li>
+                            <li>3ᵉ</li>
+                        </ul>
+                        <p>25 km</p>
+                        <p>20 min</p>
+                    </div>
+                </div>
+                <!-- Date slider ********************************************-->
+                <div id="sliderDispo" class="ui1-rangeSlider">
+                    <div class="ui1-rangeSlider-container">
+                        <div class="ui1-rangeSlider-innerBar">
+                            <div class="ui1-ruler-scale">
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">sept.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1264%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">oct.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">nov.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">déc.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">janv.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.13416%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">févr.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.0992%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">mars</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">avr.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">mai</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">juin</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 1.15536%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">juill.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui1-rangeSlider-bar" style="width: 10%; left: 63%;"></div>
+                        <div class="ui1-rangeSlider-bar" style="width: 20%; left: 10%;"></div>
+                    </div>
+                </div>
+
+                <div class="college">
+                    <p>College Lahourquie - Morlaas</p>
+                    <div style="display: flex; width: 50%; justify-content: space-between">
+                        <p style="">23 exemplaires</p>
+                        <ul class="classes" style="display: flex">
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">6ᵉ</li>
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">5ᵉ</li>
+                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">4ᵉ</li>
+                            <li>3ᵉ</li>
+                        </ul>
+                        <p style="">100 km</p>
+                        <p style="">120 min</p>
+                    </div>
+                </div>
+                <!-- Date slider ********************************************-->
+                <div id="sliderDispo" class="ui1-rangeSlider">
+                    <div class="ui1-rangeSlider-container">
+                        <div class="ui1-rangeSlider-innerBar">
+                            <div class="ui1-ruler-scale">
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">sept.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1264%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">oct.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">nov.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">déc.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">janv.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.13416%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">févr.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.0992%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">mars</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">avr.</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 10.1128%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">mai</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 9.7866%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">juin</span>
+                                    </div>
+                                </div>
+                                <div class="ui1-ruler-tick" style="display: inline-block; width: 1.15536%;">
+                                    <div class="ui1-ruler-tick-inner">
+                                        <span class="ui1-ruler-tick-label">juill.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui1-rangeSlider-bar" style="width: 10%; left: 63%;"></div>
+                        <div class="ui1-rangeSlider-bar" style="width: 20%; left: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Messages -->
+
+            <p>
+                <br>
+                <br>
+                <b>Message de M. Machin :</b>
+                <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <br>
+            </p>
+
+            <!-- commentaires -->
+            <div class="commentaires">
+                <label for="comment">Commentaire</label>
+                <textarea rows="3" name="comment">Ecriver un commentaire (optionnel)</textarea>
+                <input name="accuser" id="accuser" class="confirm" type="checkbox">
+                <label for="accuser" class="confirm" id="confirm">Envoyer une confirmation de lecture</label>
+                <button type="button" onclick="alerteValidation()" class="btn float-right">Envoyer la requète</button>
+            </div>
+        </div>
+    </article>
+</div>
