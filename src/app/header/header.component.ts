@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'app-header',
@@ -9,9 +10,12 @@ import { Title } from '@angular/platform-browser';
 export class HeaderComponent implements OnInit {
     title: string;
 
-    public constructor(private titleService: Title ) {
+    public constructor(private titleService: Title, private authService: AuthService) {
         this.title = this.titleService.getTitle();
         console.log("Title = " + this.title);
+        console.log("profAuth = ", authService.profAuth)
+        console.log("docuAuth = ", authService.docuAuth)
+        console.log("adminAuth = ", authService.adminAuth)
     }
   
     ngOnInit() {}

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 
 import { SeriesService } from './services/series.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { UtilisateursService } from './services/utilisateurs.service';
 import { FiltreIsbnPipe } from './creation-serie/filtre-isbn.pipe';
 import { FiltreSeriesPipe } from './liste-series/filtre-series.pipe';
@@ -50,6 +51,7 @@ import { CreationSerieComponent } from './creation-serie/creation-serie.componen
         Title,
         SeriesService,
         AuthService,
+        AuthGuard,
         UtilisateursService
     ],
     bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'app-connexion',
@@ -13,7 +14,7 @@ export class ConnexionComponent implements OnInit {
         mdp: ""
     }
 
-    constructor(private route:Router) { }
+    constructor(private route:Router, private authService:AuthService) { }
 
     ngOnInit() {
     }
@@ -26,15 +27,24 @@ export class ConnexionComponent implements OnInit {
         if (f.value.mailConnexion && f.value.mdpConnexion) {
             console.log(f.value);
             switch (f.value.mailConnexion) {
-                case "documentaliste@gmail.com":
+                case "prof@gmail.com":
+                    this.authService.setProfAuth(true);
                     this.route.navigateByUrl("/series");
                     break;
+                case "documentaliste@gmail.com":
+                    this.authService.setDocuAuth(true);
+                    this.route.navigateByUrl("/requetes");
+                    break;
                 case "admin@gmail.com":
+                    this.authService.setAdminAuth(true);
                     this.route.navigateByUrl("/utilisateurs");
                     break;
+                default:
+                    this.route.navigateByUrl("/connexion");
+                    break;
             }
-            
         }
     }
+
 
 }
