@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SeriesService } from '../services/series.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-serie-edite',
@@ -9,15 +10,22 @@ import { SeriesService } from '../services/series.service';
 })
 export class SerieEditeComponent implements OnInit {
     serie: object;
-    constructor(private routeParams: ActivatedRoute, private listeSeries: SeriesService) { }
+    idSerie: number;
+    constructor(private routeParams: ActivatedRoute, private seriesService: SeriesService) { }
 
     ngOnInit() {
         this.routeParams.params.subscribe(
             params => {
                 console.log(params);
-                this.serie = this.listeSeries.listeSeries[+params['josue']];
+                this.idSerie = +params['i'];
+                this.serie = this.seriesService.listeEditions[this.idSerie];
                 console.log(this.serie);
             }
         )
+    }
+    // Mise à jour de la série
+    edite(f: NgForm) {
+        console.log(f.value);
+        this.seriesService.listeEditions[this.idSerie] = f.value;
     }
 }

@@ -7,13 +7,13 @@ import { EditionModele } from '../modele/editionmodele';
     providedIn: 'root'
 })
 export class SeriesService {
-    serie: EditionModele;
-    listeSeries: Array<Object>;
+    edition: EditionModele;
+    listeEditions: Array<Object>;
     listeEditeurs: Array<Object>;
 
     constructor(private http:HttpClient) {
         // Série par défault en cas de non connexion avec la base
-        this.serie = {
+        this.edition = {
             title: "Les Fourberies de Scapin",
             author: "Molière",
             publisher: 0,
@@ -30,11 +30,11 @@ export class SeriesService {
         this.getEditeurs();
     }
 
-    getSeries() {
+    getEditions() {
         this.http.get<Array<Object>>('assets/modele/series.json').subscribe (
             data => {
                 // console.log(data);
-                this.listeSeries = data;
+                this.listeEditions = data;
             }
         );
     }
@@ -46,6 +46,6 @@ export class SeriesService {
                 this.listeEditeurs = data;
             }
         );
-        this.getSeries();
+        this.getEditions();
     }
 }

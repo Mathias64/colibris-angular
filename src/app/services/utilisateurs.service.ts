@@ -15,7 +15,7 @@ export class UtilisateursService {
     getUtlisateurs() {
         this.http.get<Array<Object>>('assets/modele/utilisateurs.json').subscribe(
             data => {
-                console.log(data);
+                // console.log(data);
                 this.listeUtilisateurs = data;
             }
         );

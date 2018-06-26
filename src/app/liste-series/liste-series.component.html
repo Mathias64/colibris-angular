@@ -41,26 +41,26 @@
 </div>
 
 <div id="zoneSearchResult">
-    <article *ngFor="let s of (serieService.listeSeries | filtreSeries:critereFiltre); let i = index">
+    <article *ngFor="let edition of (serieService.listeEditions | filtreSeries:critereFiltre); let i = index">
     <!-- <article *ngFor="let s of serieService.listeSeries; let i = index"> -->
-                    <div class="ficheContain">
+        <div class="ficheContain">
             <div class="article-left">
-                <img [src]="s.cover" alt="Couverture du livre">
+                <img [src]="edition.cover" alt="Couverture du livre">
                 <div>
                     <div class="titleArticle">
-                        <h2>{{ s.title }}</h2>
-                        <h3>{{ s.author }}</h3>
+                        <h2>{{ edition.title }}</h2>
+                        <h3>{{ edition.author }}</h3>
                     </div>
                     <div class="containMenu">
                         <ul>
-                            <li>Edition : {{ serieService.listeEditeurs[s.publisher].name }}</li>
-                            <li>Collection : {{ serieService.listeEditeurs[s.publisher].collection[s.collection] }}</li>
-                            <li>ISBN 13 : {{ s.ISBN13 }}</li>
+                            <li>Edition : {{ serieService.listeEditeurs[edition.publisher].name }}</li>
+                            <li>Collection : {{ serieService.listeEditeurs[edition.publisher].collection[edition.collection] }}</li>
+                            <li>ISBN 13 : {{ edition.ISBN13 }}</li>
                         </ul>
                         <ul>
-                            <li>Langue : {{ s.language }}</li>
-                            <li>{{ s.pages }} pages</li>
-                            <li>{{ s.publishedDate | date:'dd MMMM yyyy' }}</li>
+                            <li>Langue : {{ edition.language }}</li>
+                            <li>{{ edition.pages }} pages</li>
+                            <li>{{ edition.publishedDate | date:'dd MMMM yyyy' }}</li>
                         </ul>
                     </div>
                 </div>

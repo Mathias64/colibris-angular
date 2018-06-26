@@ -9,16 +9,18 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { SeriesService } from './services/series.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { UtilisateursService } from './services/utilisateurs.service';
-import { FiltreISBNPipe } from './creation-serie/filtre-isbn.pipe';
+import { FiltreIsbnPipe } from './creation-serie/filtre-isbn.pipe';
 import { FiltreSeriesPipe } from './liste-series/filtre-series.pipe';
+import { RechercheComponent } from './recherche/recherche.component';
 import { CreationSerieComponent } from './creation-serie/creation-serie.component';
 // import { UtilisateurEditeComponent } from './utilisateur-edite/utilisateur-edite.component';
 
@@ -33,9 +35,10 @@ import { CreationSerieComponent } from './creation-serie/creation-serie.componen
         SerieEditeComponent,
         ConnexionComponent,
         UtilisateursComponent,
-        FiltreISBNPipe,
+        FiltreIsbnPipe,
         FiltreSeriesPipe,
-        CreationSerieComponent,
+        RechercheComponent,
+        CreationSerieComponent
         // UtilisateurEditeComponent
     ],
     imports: [
@@ -45,8 +48,10 @@ import { CreationSerieComponent } from './creation-serie/creation-serie.componen
         FormsModule
     ],
     providers: [
+        Title,
         SeriesService,
         AuthService,
+        AuthGuard,
         UtilisateursService
     ],
     bootstrap: [AppComponent]

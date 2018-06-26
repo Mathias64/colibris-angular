@@ -3,12 +3,24 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
     name: 'filtreISBN'
 })
-export class FiltreISBNPipe implements PipeTransform {
+export class FiltreIsbnPipe implements PipeTransform {
 
-    transform(values: any[], isbn: number): any[] {
+    public transform(values: any[], filtre: string): any[] {
+        // console.log(values[0], filtre);
+        if (!values || !values.length) return [];
+        if (!filtre) return values;
+
+        // return values.filter(v => String(v).toLowerCase().indexOf(filtre.toLowerCase()) >= 0);
         return values.filter(v => {
-            if (v.ISBN13.indexOf(isbn) >= 0) return true;
-            return false;
+            // Filtre sur le titre
+            if (v.ISBN13) {
+                return v.ISBN13.indexOf(filtre) >= 0;
+            }
+            // Filtre sur la description
+            /*if(v.description){
+              return v.description.indexOf(filtre) >=0 ;
+            }*/
         });
     }
+
 }

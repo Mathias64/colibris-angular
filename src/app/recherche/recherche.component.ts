@@ -3,16 +3,15 @@ import { SeriesService } from '../services/series.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-    selector: 'app-liste-series',
-    templateUrl: './liste-series.component.html',
-    styleUrls: ['./liste-series.component.css',
+    selector: 'app-recherche',
+    templateUrl: './recherche.component.html',
+    styleUrls: ['./recherche.component.css',
                 '../../assets/css/iThing_1.css']
 })
-export class ListeSeriesComponent implements OnInit {
-    title:string;
-    titre:string;
+export class RechercheComponent implements OnInit {
+    titre: string;
 
-    constructor(private seriesService: SeriesService, private titleService: Title) {
+    constructor(private serieService: SeriesService, private titleService: Title) {
         this.titleService.setTitle("Recherche");
         this.titre = "Liste des séries disponibles";
     }

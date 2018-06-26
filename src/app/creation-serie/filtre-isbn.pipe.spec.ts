@@ -1,8 +1,8 @@
-import { FiltreISBNPipe } from './filtre-isbn.pipe';
+import { FiltreIsbnPipe } from './filtre-isbn.pipe';
 
-describe('FiltreISBNPipe', () => {
+describe('FiltreIsbnPipe', () => {
   it('create an instance', () => {
-    const pipe = new FiltreISBNPipe();
+    const pipe = new FiltreIsbnPipe();
     expect(pipe).toBeTruthy();
   });
 });

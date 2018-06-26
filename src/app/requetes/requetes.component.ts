@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { SeriesService } from '../services/series.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-requetes',
   templateUrl: './requetes.component.html',
-  styleUrls: ['./requetes.component.css',
-             '../liste-series/liste-series.component.css',
-             '../../assets/css/iThing_1.css']
+  styleUrls: ['../liste-series/liste-series.component.css',
+              '../../assets/css/iThing_1.css']
 })
 export class RequetesComponent implements OnInit {
-    serie:Object;
-    titre:String;
-    listedemandes:Array<Object>;
+    serie: object;
+    titre: string;
+    listedemandes:Array<object>;
 
-    constructor() {
+    constructor(private serieService: SeriesService, private titleService: Title) {
+        this.titleService.setTitle("Gestion des requêtes");
         this.titre = "Gestion des requêtes";
         this.serie = {
             title : "Les Fourberies de Scapin",
