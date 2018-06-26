@@ -1,0 +1,33 @@
+<div class="mainIndex pageLogin">
+    <section>
+        <div id="logo">
+            <img src="../../assets/images/coLibris-header.png" alt="logo">
+            <p>Echanges de séries de livres entre les collèges des Pyrénées Atlantiques</p>
+        </div>
+        <form (ngsubmit)="soumission()" id="login" method="post" onsubmit="return verifDonnees(this)">
+            <h1>Connectez-vous</h1>
+            <div id="divInputLogin">
+                <input [(ngModel)]="user.id" id="username" class="inputLogin" name="mailConnexion" type="email" placeholder="Identifiant" #idCtrl="ngModel">
+                <div *ngIf="idCtrl.invalid">Attention, vous devez renseigner l'ID</div>
+                    <!-- onblur='verifDonneesOnBlur(this)'> -->
+                <input [(ngModel)]="user.mdp" id="password" class="inputLogin" name="mdpConnexion" type="password" placeholder="Mot de passe">
+                    <!-- onblur='verifDonneesOnBlur(this)'> -->
+                <button (click)="testID()">Test ID</button>
+                <p>{{user.id}} - {{user.mdp}}</p>
+            </div>
+            <div id="lienMdpOublie">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
+            <div id="divBoutonLogin">
+                <input type="button" id="btnInscription" value="Inscription" class="btn btn-modifier colorWhite" />
+                <input type="submit" id="btnConnexion" value="Connexion" class="btn btn-modifier" />
+            </div>
+        </form>
+    </section>
+    <footer>
+    </footer>
+    <script src='js/login.js'></script>
+    <script src='profdata.js'></script>
+    <script src='js/logintest.js'></script>
+    <!-- <script src='js/pushdb.js'></script> -->
+</div>

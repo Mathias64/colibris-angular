@@ -1,0 +1,105 @@
+<form id="formSerie" method="post" autocomplete="off" action="creationSerie.js">
+    <!--DIV ISBN-13 -->
+    <h2>ISBN-13</h2>
+    <div class="formRaw">
+        <p style="white-space: pre">Commencez par entrer l'ISBN-13   </p>
+        <div>
+            <input name="prefix" required [(ngModel)]="isbnPrefix" [value]="978">
+        </div>
+        <p style="white-space: pre">   -   </p>
+        <div class="flex2">
+            <input name="prefix" list="isbn13" required [(ngModel)]="isbnSuffix">
+            <datalist id="isbn13">
+                <option *ngFor="let serie of serieService.listeSeries; let i=index" [value]="serie.ISBN13">{{ serie.ISBN13 }}</option>
+            </datalist>
+        </div>
+        <div class="divFormBtn">
+            <button (click)="verifierISBN()" type="button" class="btn btn-modifier float-right" name="verifier">Vérifier</button>
+        </div>
+    </div>
+
+    <!--DIV EDITION-->
+    <!-- <section *ngFor="let edition of (serieService.listeSeries | filtreISBN:(isbn13)); let i = index" id="edition">
+        <section>
+        <h2>Édition</h2>-->
+        <!--mettre en uppercase dans css-->
+
+        <!--IMAGE DE COUVERTURE-->
+     <!--   <div class="formRaw">
+            <div class="editionCouv">
+                <div id="containerCouv">
+                    <img id="imageCouv" [src]="edition.cover" alt="Couverture" />
+                </div>
+                <label class="custom-file-upload">
+                    <input type="file" onchange="document.getElementById('imageCouv').src = window.URL.createObjectURL(this.files[0])" /> Parcourir...
+                </label>
+            </div>
+            <div class="editionTexte">
+                <div class="formRaw">
+                    <label for="titreSerie">Titre</label>
+                    <div class="autocomplete flex1">
+                        <input class="focus" type="text" onfocus="listerTitres()" id="titreSerie" name="titreSerie" [(ngModel)]="edition.title" placeholder="Titre"
+                            required>
+                    </div>
+                </div>
+                <div class="formRaw">
+                    <label for="auteurSerie">Auteur</label>
+                    <div class="autocomplete flex1">
+                        <input class="focus" type="text" onfocus="listerAuteurs()" id="auteur" name="auteur" [(ngModel)]="edition.author" placeholder="Auteur"
+                            required>
+                    </div>
+                </div>
+                <div class="formRaw">
+                    <div class="formRaw">
+                        <label for="editeurSerie">Editeur</label>
+                        <div class="autocomplete flex2">
+                            <input class="focus" type="text" onfocus="listerEditeurs()" id="editeur" name="editeur" [(ngModel)]="edition.publisher" placeholder="Editeur"
+                                required>
+                        </div>
+                    </div>
+                    <div class="formRaw flex">
+                        <label for="langueSerie">Langue</label>
+                        <div class="autocomplete">
+                            <select class="colDroite focus selectpicker formSelect" id="langue" name="langue" [(ngModel)]="edition.language" required></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="formRaw">
+                    <div class="formRaw">
+                        <label for="collectionSerie">Collection</label>
+                        <div class="autocomplete flex2">
+                            <input class="focus" type="text" onfocus="listerCollections()" id="collection" name="collection" [(ngModel)]="edition.collection"
+                                placeholder="Collection" required>
+                        </div>
+                    </div>
+                    <div class="formRaw flex">
+                        <label for="datePublication">Publication</label>
+                        <div class="autocomplete">
+                            <input class="colDroite focus" type="date" onfocus="listerPublications()" id="datePublication" name="datePublication" [(ngModel)]="edition.publishedDate"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <div class="formRaw">
+                    <div class="formRaw">
+                        <label for="codeISBN10">ISBN-10</label>
+                        <div class="autocomplete flex2">
+                            <input class="focus" type="text" onkeypress="return verif(event)" onfocus="listerISBN10()" id="codeISBN10" maxlength="10"
+                                name="codeISBN10" [(ngModel)]="edition.ISBN10" placeholder="ISBN-10" required>
+                        </div>
+                    </div>
+                    <div class="formRaw flex">
+                        <label for="nbPages">Pages</label>
+                        <div class="autocomplete">
+                            <input class="colDroite focus" type="number" onkeypress="return verif(event)" id="nbPages" min="0" max="999" maxlength="3"
+                                step="1" name="nbPages" [(ngModel)]="edition.pages" placeholder="Nombre de pages" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="divFormBtn">
+                    <button onclick="verifierEdition()" type="button" class="btn btn-modifier float-right">Suite</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+</form>

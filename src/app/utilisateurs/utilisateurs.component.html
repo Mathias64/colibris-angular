@@ -1,0 +1,29 @@
+<h2>{{titre}}</h2>
+<div id="zoneSearchResult">
+    <article *ngFor="let utilisateur of utilisateursService.listeUtilisateurs">
+        <div *ngIf="!utilisateur.edit" class="ficheContain">
+            <div class="article-left">
+                <div class="titleArticle">
+                    <h2>{{utilisateur.civilite}} {{utilisateur.prenom}} {{utilisateur.nom}}</h2>
+                    <p>Courriel : {{utilisateur.courriel}}</p>
+                    <p>Mot de passe : {{utilisateur.motDePasse}}</p>
+                </div>
+            </div>
+            <div class="article-right">
+                <ul>
+                    <li><i (click)="utilisateur.edit = !utilisateur.edit" class="fas fa-pencil-alt" title="Modifier"></i></li>
+                    <li><i class="fas fa-angle-down" title="Ouvrir"></i></li>
+                </ul>
+            </div>
+        </div>
+        <form *ngIf="utilisateur.edit" (ngSubmit)="showSubmit(utilisateursService.listeUtilisateurs[i])">
+            <fieldset>
+                <input name="civilite" [(ngModel)]="utilisateur.civilite">
+                <input name="prenom" [(ngModel)]="utilisateur.prenom">
+                <input name="nom" [(ngModel)]="utilisateur.nom">
+                <input name="courriel" [(ngModel)]="utilisateur.courriel">
+                <button type="submit">Maj</button>
+            </fieldset>
+        </form>
+    </article>
+</div>
