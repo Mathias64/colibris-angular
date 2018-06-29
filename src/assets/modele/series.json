@@ -157,9 +157,6 @@
                 "quantite": 27,
                 "niveau": [3],
                 "statut": 2
-            },
-            {
-                "statut": 2
             }
         ]
     },
@@ -186,9 +183,6 @@
                 "codeBar": 4780666,
                 "quantite": 30,
                 "niveau": [4, 3],
-                "statut": 1
-            },
-            {
                 "statut": 1
             }
         ]
@@ -253,9 +247,6 @@
                 "quantite": 26,
                 "niveau": [6],
                 "statut": 1
-            },
-            {
-                "statut": 1
             }
         ]
     },
@@ -298,12 +289,6 @@
                 "quantite": 32,
                 "niveau": [4],
                 "statut": 1
-            },
-            {
-                "statut": 1
-            },
-            {
-                "statut": 2
             }
         ]
     },
@@ -445,9 +430,6 @@
         "ISBN10": 2290099074,
         "ISBN13": 9782290099070,
         "series": [
-            {
-                "statut": 1
-            },
             {
                 "college": 6,
                 "codeBar": 30508000,

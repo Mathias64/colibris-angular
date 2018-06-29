@@ -12,11 +12,11 @@ export class HeaderComponent implements OnInit {
 
     public constructor(private titleService: Title, private authService: AuthService) {
         this.title = this.titleService.getTitle();
-        console.log("Title = " + this.title);
-        console.log("profAuth = ", authService.profAuth)
-        console.log("docuAuth = ", authService.docuAuth)
-        console.log("adminAuth = ", authService.adminAuth)
-        console.log("connected = ", authService.adminAuth)
+        // console.log("Title = " + this.title);
+        // console.log("profAuth = ", authService.profAuth);
+        // console.log("docuAuth = ", authService.docuAuth);
+        // console.log("adminAuth = ", authService.adminAuth);
+        // console.log("connected = ", authService.adminAuth);
     }
   
     ngOnInit() {}

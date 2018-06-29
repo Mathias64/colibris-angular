@@ -34,9 +34,9 @@
     margin-bottom: 5px;
 }
 
-#zoneSearchResult {
-    /*margin-top: 200px;*/
-}
+/* #zoneSearchResult {
+    margin-top: 200px;
+} */
 article {
     background-color: #fff;
     padding: 10px;
@@ -86,9 +86,9 @@ article ul {
 	margin-bottom: 5px;
 }
 
-.titleArticle {
-    /*background: green;*/
-}
+/* .titleArticle {
+    background: green;
+} */
 
 .article-right {
     display: flex;
@@ -142,7 +142,7 @@ article ul {
 
 .article-complement {
     width: 100%;
-    display: none; /* a repasser en block*/
+    /* display: none; a repasser en block */
     justify-content: space-between;
     padding-top: 10px;
     overflow: hidden;
@@ -158,9 +158,9 @@ article ul {
     padding-top: 20px;
 }
 
-.infoResa {
-    /*padding-left: 20px;*/
-}
+/* .infoResa {
+    padding-left: 20px;
+} */
 
 .dates {
     display: flex;

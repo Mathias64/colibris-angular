@@ -19,9 +19,12 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UtilisateursService } from './services/utilisateurs.service';
 import { FiltreIsbnPipe } from './creation-serie/filtre-isbn.pipe';
-import { FiltreSeriesPipe } from './liste-series/filtre-series.pipe';
+import { NiveauxPipe } from './liste-series/filtre-series.pipe';
 import { RechercheComponent } from './recherche/recherche.component';
 import { CreationSerieComponent } from './creation-serie/creation-serie.component';
+import { ExemplairesSeriesPipe } from './liste-series/exemplaires-series.pipe';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 // import { UtilisateurEditeComponent } from './utilisateur-edite/utilisateur-edite.component';
 
 @NgModule({
@@ -36,9 +39,13 @@ import { CreationSerieComponent } from './creation-serie/creation-serie.componen
         ConnexionComponent,
         UtilisateursComponent,
         FiltreIsbnPipe,
-        FiltreSeriesPipe,
+        // FiltreSeriesPipe,
+        NiveauxPipe,
         RechercheComponent,
-        CreationSerieComponent
+        CreationSerieComponent,
+        ExemplairesSeriesPipe,
+        CheckboxComponent,
+        CheckboxGroupComponent
         // UtilisateurEditeComponent
     ],
     imports: [

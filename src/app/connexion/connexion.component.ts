@@ -25,10 +25,10 @@ export class ConnexionComponent implements OnInit {
 
     soumission(f) {
         if (f.value.mailConnexion && f.value.mdpConnexion) {
-            console.log(f.value);
+            // console.log(f.value);
             switch (f.value.mailConnexion) {
                 case "prof@gmail.com":
-                    this.authService.setProfAuth(true);
+                    this.authService.setAuth("profAuth", true);
                     this.route.navigateByUrl("/series");
                     break;
                 case "documentaliste@gmail.com":

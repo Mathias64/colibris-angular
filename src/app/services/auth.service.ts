@@ -5,8 +5,8 @@ import { isString } from 'util';
     providedIn: 'root'
 })
 export class AuthService {
-    profAuth:boolean = false;
-    docuAuth:boolean = false;
+    profAuth:boolean  = false;
+    docuAuth:boolean  = false;
     adminAuth:boolean = false;
     connected:boolean = false;
 
@@ -17,8 +17,8 @@ export class AuthService {
         sessionStorage.setItem(id, bool.toString());
         this.connected = bool;
         sessionStorage.setItem('connected', bool.toString());
-        console.log(id,"Auth = ", this[id], "  ",id,"Session = ", bool.toString());
-        console.log("Connected = ", this.connected, "   bool = ", bool.toString());
+        // console.log(id,"Auth = ", this[id], "  ",id,"Session = ", bool.toString());
+        // console.log("Connected = ", this.connected, "   bool = ", bool.toString());
     }
     getAuth() {
         switch (true) {
@@ -33,7 +33,7 @@ export class AuthService {
                 break;
             case isString(sessionStorage.getItem('connected')):
                 this.connected = eval(sessionStorage.getItem('connected'));
-                console.log("sessionStorage = ", sessionStorage.getItem('connected'));
+                // console.log("sessionStorage = ", sessionStorage.getItem('connected'));
                 break;
         }
     }
