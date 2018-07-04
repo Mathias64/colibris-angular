@@ -18,11 +18,12 @@ import { SeriesService } from './services/series.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { UtilisateursService } from './services/utilisateurs.service';
+import { TitreSeriesPipe } from './liste-series/titre-series.pipe';
 import { FiltreIsbnPipe } from './creation-serie/filtre-isbn.pipe';
-import { NiveauxPipe } from './liste-series/filtre-series.pipe';
+import { NiveauxSeriesPipe } from './liste-series/niveaux-series.pipe';
 import { RechercheComponent } from './recherche/recherche.component';
 import { CreationSerieComponent } from './creation-serie/creation-serie.component';
-import { ExemplairesSeriesPipe } from './liste-series/exemplaires-series.pipe';
+import { ExemplairesSeriesPipe, ExemplaireseditionsPipe } from './liste-series/exemplaires-series.pipe';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.component';
 // import { UtilisateurEditeComponent } from './utilisateur-edite/utilisateur-edite.component';
@@ -38,12 +39,13 @@ import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.componen
         SerieEditeComponent,
         ConnexionComponent,
         UtilisateursComponent,
+        TitreSeriesPipe,
         FiltreIsbnPipe,
-        // FiltreSeriesPipe,
-        NiveauxPipe,
+        NiveauxSeriesPipe,
         RechercheComponent,
         CreationSerieComponent,
         ExemplairesSeriesPipe,
+        ExemplaireseditionsPipe,
         CheckboxComponent,
         CheckboxGroupComponent
         // UtilisateurEditeComponent
@@ -57,6 +59,8 @@ import { CheckboxGroupComponent } from './checkbox-group/checkbox-group.componen
     providers: [
         Title,
         SeriesService,
+        TitreSeriesPipe,
+        NiveauxSeriesPipe,
         AuthService,
         AuthGuard,
         UtilisateursService

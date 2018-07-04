@@ -1,7 +1,7 @@
 <div class="search-box">
     <!-- Barre de recherche *************************************-->
     <div class="search-bar">
-        <input type="text" class="input-search" [(ngModel)]='critereFiltre' placeholder="Rechercher...">
+        <input type="text" class="input-search" [(ngModel)]='titreFiltre' placeholder="Rechercher...">
         <span class="input-group-btn">
             <button id="boutonRechercher" class="btn" type="button">Rechercher</button>
         </span>
@@ -11,24 +11,24 @@
     <div class="advance-search">
         <form>
             <label for="nbEx">Nombre d'exemplaires</label>
-            <input [(ngModel)]='nbExemplaires' class="formInput formNumber" type="number" name="points" step="1">
+            <input [(ngModel)]='nbExemplaires' class="formInput formNumber" type="number" name="nbEx" step="1" [value]="25">
         </form>
         <div class="formRaw formSelect" style="width:330px">
             <label>Niveau(x)</label>
             <label class="container">6<sup>ème</sup>
-                <input type="checkbox" name="interest" [(ngModel)]="filterItem.checked" [value]="6">
+                <input type="checkbox" name="interest" [(ngModel)]="filterItem" [value]="6">
                 <span class="checkmark select"></span>
             </label>
             <label class="container">5<sup>ème</sup>
-                <input type="checkbox" name="interest" [(ngModel)]="filterItem.checked" [value]="5">
+                <input type="checkbox" name="interest" [(ngModel)]="filterItem" [value]="5">
                 <span class="checkmark select"></span>
             </label>
             <label class="container">4<sup>ème</sup>
-                <input type="checkbox" name="interest" [(ngModel)]="filterItem.checked" [value]="4">
+                <input type="checkbox" name="interest" [(ngModel)]="filterItem" [value]="4">
                 <span class="checkmark select"></span>
             </label>
             <label class="container">3<sup>ème</sup>
-                <input type="checkbox" name="interest" [(ngModel)]="filterItem.checked" [value]="3">
+                <input type="checkbox" name="interest" [(ngModel)]="filterItem" [value]="3">
                 <span class="checkmark select"></span>
             </label>
         </div>
@@ -47,9 +47,9 @@
 </div>
 
 <div id="zoneSearchResult">
-    <!-- <article *ngFor="let edition of (seriesService.listeEditions | filtreSeries: critereFiltre:nivChoix); let i = index"> -->
-        <article *ngFor="let edition of (seriesService.listeEditions | filtreSeries: { property: ''} : checked() : false)">
-            <!-- <article *ngFor="let s of serieService.listeSeries; let i = index"> -->
+    <!-- <article *ngFor="let edition of (seriesService.listeEditions | titreSeries: titreFiltre); let i = index"> -->
+        <article *ngFor="let edition of (seriesService.listeEditions | titrePipe: titreFiltre | nbExemplairesEditionPipe:nbExemplaires); let i = index">
+            <!-- <article *ngFor="let edition of (seriesService.listeEditions | niveauxSeries: { property: ''} : checked() : false)"> -->
         <div class="ficheContain">
             <div class="article-left">
                 <img [src]="edition.cover" alt="Couverture du livre">
@@ -127,16 +127,16 @@
 
         <div class="article-complement">
             <!-- colleges -->
-            <div *ngFor="let serie of (edition.series | exemplairesSeries:nbExemplaires); let i = index" class="collegeContain">
+            <div *ngFor="let serie of (edition.series | nbExemplairesSeriePipe:nbExemplaires); let i = index" class="collegeContain">
                 <div class="college">
                     <p>College {{ collegesService.listeColleges[serie.college].name }}</p>
                     <div style="display: flex; width: 50%; justify-content: space-between">
                         <p>{{ serie.quantite }} exemplaires</p>
                         <ul class="classes" style="display: flex">
-                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">6&#7497;</li>
-                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">5&#7497;</li>
-                            <li style="padding-right: 5px; border-right: 1px solid black; margin-right: 5px">4&#7497;</li>
-                            <li>3&#7497;</li>
+                            <li [ngStyle]="{ 'background-color':serie.niveau.indexOf(6) >=0 ? '#00c300' : '' }">6&#7497;</li>
+                            <li [ngStyle]="{ 'background-color':serie.niveau.indexOf(5) >=0 ? '#00c300' : '' }">5&#7497;</li>
+                            <li [ngStyle]="{ 'background-color':serie.niveau.indexOf(4) >=0 ? '#00c300' : '' }">4&#7497;</li>
+                            <li [ngStyle]="{ 'background-color':serie.niveau.indexOf(3) >=0 ? '#00c300' : '' }">3&#7497;</li>
                         </ul>
                         <p>25 km</p>
                         <p>20 min</p>

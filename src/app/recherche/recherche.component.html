@@ -39,7 +39,7 @@
     
             <div class="dropdown">
                 <select [(ngModel)]="selectedEditeur" #power="ngModel" id="editeur" class="formInput formSelect" data-width="fit" title="Editeur">
-                    <option *ngFor="let editeur of serieService.listeEditeurs; let i = index" [ngValue]="editeur._id">{{ editeur.name }} => {{ i }}</option>
+                    <option *ngFor="let editeur of seriesService.listeEditeurs; let i = index" [ngValue]="editeur._id">{{ editeur.name }} => {{ i }}</option>
                 </select>
                 <!-- <select id="collection" class="formInput formSelect" title="Collection">
                 <option *ngFor="let editeur of (serieService.listeEditeurs | filtreEditeurs:selectedEditeur)">{{ editeur.collection[0] }}</option>
@@ -52,7 +52,7 @@
     </div>
     
     <div id="zoneSearchResult">
-        <article *ngFor="let s of (serieService.listeSeries | filtreSeries:critereFiltre); let i = index">
+        <article *ngFor="let s of (seriesService.listeSeries | titrePipe:critereFiltre); let i = index">
             <!-- <article *ngFor="let s of serieService.listeSeries; let i = index"> -->
     
             <!-- Affichage de l'édition ======================================================= -->
@@ -96,7 +96,7 @@
     
             <!-- Formulaire de modification de l'édition ====================================== -->
             <div *ngIf="s.edit" class="ficheContain">
-                <form  (ngSubmit)="showSubmit(lSeries.listeSeries[i])">
+                <form  (ngSubmit)="showSubmit(seriesService.listeSeries[i])">
                     <div class="article-left">
                         <img [src]="s.cover" alt="Couverture du livre">
                         <div>

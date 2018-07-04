@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SeriesService } from '../services/series.service';
 import { Title } from '@angular/platform-browser';
 import { CollegesService } from '../services/colleges.service';
-import { NiveauxPipe } from './filtre-series.pipe';
+import { TitreSeriesPipe } from './titre-series.pipe';
+import { NiveauxSeriesPipe } from './niveaux-series.pipe';
 // import { CheckboxGroupComponent } from '../checkbox-group/checkbox-group.component';
 // import { CheckboxComponent } from '../checkbox/checkbox.component';
 
@@ -25,12 +26,9 @@ export class ListeSeriesComponent implements OnInit {
     ];
 
 
-    constructor(private seriesService: SeriesService,
-                private collegesService: CollegesService,
-                private titleService: Title,
-                public  niveauxPipe: NiveauxPipe
-                // private checkBoxGroup: CheckboxGroupComponent,
-                // private checkBox: CheckboxComponent
+    constructor(private collegesService: CollegesService,
+                private seriesService: SeriesService,
+                private titleService: Title
             ) {
         this.titleService.setTitle("Recherche");
         this.titre = "Liste des séries disponibles";

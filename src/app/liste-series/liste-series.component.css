@@ -151,6 +151,9 @@ article ul {
 .collegeContain {
     width: 100%;
 }
+.collegeContain p {
+    line-height:30px;
+}
 
 .college {
     display: flex;
@@ -212,4 +215,19 @@ article ul {
 
 .couleur-article-requete-clear {
     border-left: 8px solid #5e5e5e;
+}
+
+.classes li {
+    width: 30px;
+    height: 30px;
+    padding: 5px 0 5px 8px;
+    background-color: #cacaca;
+    color: #e0e0e0;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.niveau {
+    background-color: #82fc64;
+    color: #1fa513;
 }
